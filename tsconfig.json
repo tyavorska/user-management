@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Transpile to ES6 (or adjust for your browser support needs)
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Include DOM and ESNext features
+    "jsx": "react-jsx", // Use the new JSX transform (React 17+)
+    "module": "ESNext", // ES module support
+    "moduleResolution": "Node", // Resolve modules using Node.js conventions
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Handle default imports from non-ES modules
+    "skipLibCheck": true, // Skip type-checking of declaration files
+    "forceConsistentCasingInFileNames": true, // Enforce case-sensitive file names
+    "allowSyntheticDefaultImports": true, // Allow synthetic default imports
+    "resolveJsonModule": true, // Enable importing JSON files
+    "isolatedModules": true, // Ensure each file can be transpiled in isolation
+    "outDir": "./dist", // Specify output directory for compiled files
+    "rootDir": "./src" // Specify root directory for source files
+  },
+  "include": [
+    "src/**/*" // Include all files in the `src` folder
+  ],
+  "exclude": [
+    "node_modules", // Exclude dependencies
+    "dist" // Exclude the output folder
+  ]
+}
