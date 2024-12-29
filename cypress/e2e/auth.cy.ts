@@ -32,7 +32,7 @@ describe('Authentication Flow', () => {
     });
 
     it('should navigate to the sign-up page', () => {
-      cy.contains("Don't have an account?").click();
+      cy.contains('Sign Up').click();
       cy.url().should('include', '/signup');
     });
   });
@@ -62,12 +62,10 @@ describe('Authentication Flow', () => {
     });
 
     it('should register successfully with valid inputs', () => {
-      cy.get('input[type="email"]').type('new.user@reqres.in');
-      cy.get('input[type="password"]').first().type('password123');
-      cy.get('input[type="password"]').last().type('password123');
+      cy.get('input[type="email"]').type('eve.holt@reqres.in');
+      cy.get('input[type="password"]').first().type('pistol');
+      cy.get('input[type="password"]').last().type('pistol');
       cy.get('button[type="submit"]').click();
-
-      console.log(cy.url());
 
       cy.url().should('include', '/dashboard');
     });
@@ -87,7 +85,7 @@ describe('Authentication Flow', () => {
     });
 
     it('should navigate to the sign-in page', () => {
-      cy.contains('Already have an account?').click();
+      cy.contains('Sign In').click();
       cy.url().should('include', '/signin');
     });
   });

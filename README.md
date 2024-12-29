@@ -12,6 +12,7 @@ This is a simple React application with TypeScript, Context API for state manage
 
 ## Project Structure
 
+```js
 src/
 ├── components/
 │ ├── Auth
@@ -35,22 +36,32 @@ src/
 │ └── types.ts
 ├── App.tsx
 └── index.tsx
+```
 
 ## Installation
 
 To get started, clone the repository and install the dependencies:
 
+```bash
 git clone <repository_url>
 cd <project_name>
 npm install
+```
 
 Running the App
 To run the app in development mode:
+
+```bash
 npm start
+```
+
 Visit http://localhost:3000 in your browser.
 
 To run all the tests, use the following command:
-npm test
+
+```bash
+npx cypress open
+```
 
 Technologies Used
 React
@@ -58,3 +69,4 @@ TypeScript
 Context API
 Fetch (for HTTP requests)
 LocalStorage
+Material UI

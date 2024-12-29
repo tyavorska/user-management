@@ -11,7 +11,7 @@ export const AuthContext = createContext<AuthContextType | undefined>(
 );
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [token, setToken] = useLocalStorage<string | null>('token', null);
+  const [token, setToken] = useLocalStorage<string | null>('token', '');
 
   return (
     <AuthContext.Provider value={{ token, setToken }}>

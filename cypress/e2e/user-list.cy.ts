@@ -16,9 +16,6 @@ describe('UserTable Component', () => {
   ];
 
   beforeEach(() => {
-    cy.window().then((win) => {
-      win.localStorage.setItem('token', 'fake-token');
-    });
     cy.intercept('GET', '/api/users?page=1', {
       statusCode: 200,
       body: { data: users },
@@ -35,7 +32,11 @@ describe('UserTable Component', () => {
     }).as('updateUser');
 
     const baseUrl = 'http://localhost:3000';
-    cy.visit(`${baseUrl}/dashboard`);
+    cy.visit(`${baseUrl}/signin`);
+
+    cy.get('input[type="email"]').type('eve.holt@reqres.in');
+    cy.get('input[type="password"]').first().type('pistol');
+    cy.get('button[type="submit"]').click();
   });
 
   it('should render the user list', () => {
